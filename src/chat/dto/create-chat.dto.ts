@@ -4,4 +4,6 @@ export class CreateChatDto {
     sender: string;
     receiver: string;
     createdAt: string;
+    updatedAt: Date;
+    isDeleted: boolean;
 }

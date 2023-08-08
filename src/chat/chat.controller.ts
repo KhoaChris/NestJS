@@ -3,9 +3,9 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Patch,
 } from '@nestjs/common';
 import { ChatService } from './chat.service';
 import { CreateChatDto } from './dto/create-chat.dto';
@@ -20,7 +20,7 @@ export class ChatController {
     return this.chatService.create(createChatDto);
   }
 
-  @Get()
+  @Get('')
   findAll() {
     return this.chatService.findAll();
   }
@@ -37,6 +37,6 @@ export class ChatController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.chatService.remove(+id);
+    return this.chatService.remove(id);
   }
 }
